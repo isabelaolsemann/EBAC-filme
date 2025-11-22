@@ -1,0 +1,51 @@
+@use 'variaveis';
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    background-color: transparent;
+    transition: background-color .5s ease;
+    z-index: 10; 
+    padding: 18px 36px;
+    display: flex;
+    justify-content: center; 
+
+    &__container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+    }
+    
+    &__links {
+        display: flex;
+        align-items: center;
+    }
+    
+    .button {
+        height: 40px;
+        font-size: 15px;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+            padding: 8px 11px;
+            height: 40px;
+            letter-spacing: 0;
+        }
+
+        &--dark {
+            background-color: variaveis.$corTextoSecundario; 
+            color: variaveis.$corDeFundo; 
+            border-color: variaveis.$corTextoSecundario; 
+
+            &:hover {
+                background-color: variaveis.$corTextoPrincipal;
+                color: variaveis.$corDeFundo;
+                border-color: variaveis.$corTextoPrincipal;
+            }
+        }
+    }
+}

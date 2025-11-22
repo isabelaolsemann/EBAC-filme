@@ -1,0 +1,104 @@
+@use 'variaveis'; 
+
+.hero {
+    padding: 5.6vw;
+    min-height: 100vh;
+    color: variaveis.$corTextoSecundario;
+    display: flex;
+    align-items: center;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+
+        @media (max-width: 992px) {
+            flex-direction: column; 
+            align-items: center;
+        }
+    }
+
+    &__details {
+        flex: 1;
+        max-width: 50%;
+        
+        @media (max-width: 992px) {
+            max-width: 100%;
+            text-align: center;
+        }
+        
+        .title--large {
+            color: variaveis.$corTextoPrincipal;
+            padding-top: 50px;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 24px;
+        }
+
+        .text--large {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__poster {
+        flex-shrink: 0;
+        
+        @media (max-width: 992px) {
+            max-width: 70%; 
+            margin-top: 40px;
+        }
+        
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: calc(100vh - (5.6vw * 2));
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+    }
+    
+    &__meta {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .meta-line {
+            display: flex;
+            align-items: center;
+        }
+        .meta-item {
+            margin-right: 15px;
+            
+            &.meta-rating {
+                background-color: variaveis.$corDeFundoBotaoSecundario;
+                padding: 2px 6px;
+                border-radius: 4px;
+                margin-left: 5px;
+                font-weight: bold;
+                color: variaveis.$corTextoSecundario;
+            }
+        }
+    }
+    
+    .hero-button {
+        margin-top: 10px;
+        display: inline-block;
+    }
+}
+
+.button--dark {
+    background-color: variaveis.$corDeFundoBotaoDark;
+    color: variaveis.$corTextoSecundario;
+    border: 1px solid variaveis.$corTextoSecundario;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}

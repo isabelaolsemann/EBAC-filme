@@ -1,0 +1,65 @@
+@use 'variaveis';
+
+.footer {
+    padding: 3vw 5.6vw;
+    background-color: variaveis.$corDeFundo;
+    color: variaveis.$corTextoSecundario;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        min-width: 200px; /* Garante que não fiquem muito estreitos */
+
+        @media (max-width: 768px) {
+            min-width: 45%; /* Duas colunas em telas pequenas */
+        }
+    }
+
+    &__title {
+        color: variaveis.$corTextoPrincipal;
+        margin-bottom: 16px;
+    }
+
+    &__link {
+        margin-bottom: 8px;
+        text-decoration: none;
+        color: variaveis.$corTextoSecundario;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: variaveis.$corTextoPrincipal;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+
+        p {
+            color: variaveis.$corTextoSecundario;
+        }
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            p:first-child {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
